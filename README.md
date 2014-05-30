@@ -16,9 +16,9 @@ Git Team Workflow
 ## Workflow Commands ##
 
 
-1. Do a git pull on the `develop` branch before creating your branch so you work on an upto date copy
++ Do a git pull on the `develop` branch before creating your branch so you work on an upto date copy
 
-```
+```git
 # use the develop branch
 git checkout develop
 
@@ -27,29 +27,29 @@ git pull origin develop
 ```
 
 
-2. create your branch as a copy of the develop branch
++ Create your branch as a copy of the develop branch
 
-```
+```git
 # the -b flag tells git to create the branch if doesn't exist
 git checkout -b [branch-name] develop
 
 # view branches (you will see an asterix on your working branch)
 git branch -a
+```
 
++ Work on your branch and commit your changes.
+
+
++ Push your branch to the repo if required
+
+```git
+git push [branch-name]
 ```
 
 
-3. Work on your branch and commit your changes.
++ Merging with the `develop` branch
 
-
-4. Push your branch to the repo if required
-
-`git push [branch-name]`
-
-
-5. Merging with the `develop` branch
-
-```
+```git
 # move into develop branch
 git checkout develop
 
@@ -57,7 +57,8 @@ git checkout develop
 git pull origin develop
 
 # do the following if you have multiple commits in your branch
-# the --squash flag removes all commit messages and gives you the opportunity to commit to the develop branch with a single commit message
+# the --squash flag removes all commit messages and gives you the opportunity to  
+# commit to the develop branch with a single commit message
 # otherwise all commit messages will be imported to the develop branch
 
 git merge –-squash [branch-name]
@@ -67,8 +68,9 @@ git commit -m ‘one line comment'
 ```
 
 
-6. Update your git config file if required
-```
++ Update your git config file if required
+
+```git
 # location: .git/config
 
 Change url field to include username i.e:
@@ -76,24 +78,28 @@ url = https://[username]@github.com/haani-niyaz/teamworkgit.git
 ```
 
 
-7. Once merging is complete push to the `develop` remote branch
++ Once merging is complete push to the `develop` remote branch
 
-`git push origin develop`
+```git
+git push origin develop
+```
 
 
 
 
 ### Useful Commands ###
 
-Push all branches to remote repositories
++ Push all branches to remote repositories
 
-`git push -all`
-
-
-
-Instead of doing a git pull you can do the following to check what is different between the remote and local:
-
+```git
+git push -all
 ```
+
+
+
++ Instead of doing a git pull you can do the following to check what is different between the remote and local:
+
+```git
 # fetch remote branch within local branch
 git fetch 
 
