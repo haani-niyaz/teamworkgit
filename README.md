@@ -18,7 +18,7 @@ Git Team Workflow
 
 + Do a git pull on the `develop` branch before creating your branch so you work on an upto date copy
 
-```git
+```python
 # use the develop branch
 git checkout develop
 
@@ -29,7 +29,7 @@ git pull origin develop
 
 + Create your branch as a copy of the develop branch
 
-```git
+```python
 # the -b flag tells git to create the branch if doesn't exist
 git checkout -b [branch-name] develop
 
@@ -42,14 +42,14 @@ git branch -a
 
 + Push your branch to the repo if required
 
-```git
+```python
 git push [branch-name]
 ```
 
 
 + Merging with the `develop` branch
 
-```git
+```python
 # move into develop branch
 git checkout develop
 
@@ -70,7 +70,7 @@ git commit -m ‘one line comment'
 
 + Update your git config file if required
 
-```git
+```python
 # location: .git/config
 
 Change url field to include username i.e:
@@ -80,7 +80,7 @@ url = https://[username]@github.com/haani-niyaz/teamworkgit.git
 
 + Once merging is complete push to the `develop` remote branch
 
-```git
+```python
 git push origin develop
 ```
 
@@ -91,7 +91,7 @@ git push origin develop
 
 + Push all branches to remote repositories
 
-```git
+```python
 git push -all
 ```
 
@@ -99,7 +99,7 @@ git push -all
 
 + Instead of doing a git pull you can do the following to check what is different between the remote and local:
 
-```git
+```python
 # fetch remote branch within local branch
 git fetch 
 
