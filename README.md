@@ -31,7 +31,7 @@ git pull origin develop
 
 ```python
 # the -b flag tells git to create the branch if doesn't exist
-git checkout -b [branch-name] develop
+git checkout -b <branch-name> develop
 
 # view branches (you will see an asterix on your working branch)
 git branch -a
@@ -43,7 +43,7 @@ git branch -a
 + Push your branch to the repo if required
 
 ```python
-git push [branch-name]
+git push <branch-name>
 ```
 
 
@@ -61,7 +61,7 @@ git pull origin develop
 # commit to the develop branch with a single commit message
 # otherwise all commit messages will be imported to the develop branch
 
-git merge –-squash [branch-name]
+git merge –-squash <branch-name>
 
 # adding [branch-name] to develop branch
 git commit -m ‘one line comment'
@@ -74,7 +74,7 @@ git commit -m ‘one line comment'
 # location: .git/config
 
 Change url field to include username i.e:
-url = https://[username]@github.com/haani-niyaz/teamworkgit.git
+url = https://<username>@github.com/haani-niyaz/teamworkgit.git
 ```
 
 
@@ -84,6 +84,35 @@ url = https://[username]@github.com/haani-niyaz/teamworkgit.git
 git push origin develop
 ```
 
+
+
+#### Using Tags  ####
+
++ Tags can be used to setup versions. You can also use it to capture working states of the code.
+
+```ruby
+
+# display tags
+git tag
+
+# create a tag i.e: v1.0
+git tag v1.0 -m "Added new feature1"
+
+# push to remote
+git push origin v1.0
+
+
+# switch to the point in time of using a tag
+git checkout v1.0
+
+# delete a tag locally
+git tag -d v1.0
+
+# delete a remote tag
+git push origin :v1.0
+
+
+```
 
 
 
@@ -119,6 +148,20 @@ git diff develop..bug_fix
 git diff --name-status develop..bug_fix
 
 ```
+
++ Deleting a branch
+
+```ruby
+
+# deleting a local branch
+git branch -d bug_fix
+
+# deleting the corresponding remote branch (if it has been pushed)
+git push origin :bug_fix
+
+```
+
+
 
 
 
