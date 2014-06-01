@@ -108,7 +108,17 @@ git diff ..origin/develop
 ```
 
 
++ Comparing 2 branches
 
+```python
+
+# show the changes
+git diff develop..bug_fix
+
+# only shows which files have changes
+git diff --name-status develop..bug_fix
+
+```
 
 
 
