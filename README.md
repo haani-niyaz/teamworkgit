@@ -126,7 +126,7 @@ git push -all
 
 
 
-+ Instead of doing a git pull you can do the following to check what is different between the remote and local:
++ You can do the following to check what is different between the remote and local:
 
 ```python
 # fetch remote branch within local branch
@@ -135,6 +135,19 @@ git fetch
 # compare changes
 git diff ..origin/develop
 ```
+
++ Switching to a remote branch
+
+```python
+
+
+# fetch remote branch(es)
+git fetch
+
+# git checkout <branch-name>
+
+```
+
 
 
 + Comparing 2 branches
