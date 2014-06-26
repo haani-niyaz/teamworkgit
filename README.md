@@ -144,7 +144,7 @@ git diff ..origin/develop
 # fetch remote branch(es)
 git fetch
 
-# git checkout <branch-name>
+git checkout <branch-name>
 
 ```
 
