@@ -162,6 +162,14 @@ git diff --name-status develop..bug_fix
 
 ```
 
++ Comparing a file between 2 branches
+
+```python
+
+git diff bug_fix master -- app/views/layout.blade.php 
+
+```
+
 + Deleting a branch
 
 ```ruby
