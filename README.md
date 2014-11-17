@@ -183,6 +183,65 @@ git push origin :bug_fix
 ```
 
 
+## Reverting Git Commits ##
+
+[Many ways to do this see this post](http://stackoverflow.com/questions/4114095/revert-to-a-previous-git-commit)
+
+I generally tend to do the following:
+
++ If code has been published (pushed) already, then fix your mistake and recommit.
+
++ If you make a commit locally and instantly realize it's wrong, you can do the following:
+
+Updating the commit message
+
+```ruby
+# This will present the previous commit message in the editor
+git commit --amend
+```
+
+Updating an existing commit
+
+```ruby
+git log --oneline 
+8b35fe6 test.txt updated
+fe1ba6f Initial commit
+
+# Update and add text.txt to staging area
+git add text.txt
+
+# This will present the previous commit message in the editor
+git commit --amend
+
+git log --oneline
+8b35fe6 test.txt updated. Fixed minor spelling mistake.
+fe1ba6f Initial commit
+```
+
+
++ If the commit was an old commit made locally then:
+
+```ruby
+
+# This will go back to commit 2858eb3
+git reset --hard 2858eb3
+
+```
+
+**Warning**
+The above will literally delete all commits that came after `2858eb3` which also means you will loose any unsaved work.
+
++ To save working change before doing a reset:
+
+```ruby
+# Make sure your WIP files are added to the staging area first
+git add --all 
+git stash
+git reset --hard 2858eb3
+git stash pop
+```
+
+
 
 
 
