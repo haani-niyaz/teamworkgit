@@ -144,10 +144,25 @@ git diff ..origin/develop
 # fetch remote branch(es)
 git fetch
 
-git checkout <branch-name>
+# result
+
+  develop
+  feature/PA-337-deploy-noarch-rpms/haani
+  master
+* test/r10k/haani
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/develop
+  remotes/origin/feature/PA-333-create-rpm-recipe/sam
+  remotes/origin/feature/PA-337-deploy-noarch-rpms/haani
+  remotes/origin/feature/PA-588-cap-prefix-environments-with-platform/haani
+  remotes/origin/master
+  remotes/origin/test/r10k/haani
+
+
+# checkout remote branch
+git checkout feature/PA-588-cap-prefix-environments-with-platform/haani
 
 ```
-
 
 
 + Comparing 2 branches
