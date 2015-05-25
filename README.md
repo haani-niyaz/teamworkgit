@@ -215,7 +215,7 @@ Updating the commit message
 git commit --amend
 ```
 
-Updating an existing commit
+ Updating an existing commit
 
 ```ruby
 git log --oneline 
@@ -233,6 +233,24 @@ git log --oneline
 fe1ba6f Initial commit
 ```
 
+
+**Reverting to an older commit (Recommended Way):**
+
+```ruby
+git log --oneline
+c655bfc Revert "This is the second commit"
+475f323 This is the second commit
+c50df81 This is the first commit
+91a9376 Revert "Initial commit"
+d6f4efd Added content to file3
+4fe192e 6th commit.Added file3.txt
+fe1ba6f Initial commit
+
+# Reverting back to the old commit
+git revert --no-edit fe1ba6f..HEAD
+```
+
+**Other ways of doing it:**
 
 + If the commit was an old commit made locally then:
 
@@ -255,8 +273,3 @@ git stash
 git reset --hard 2858eb3
 git stash pop
 ```
-
-
-
-
-
