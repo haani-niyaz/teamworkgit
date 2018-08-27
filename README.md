@@ -90,7 +90,7 @@ git push origin develop
 
 + Tags can be used to setup versions. You can also use it to capture working states of the code.
 
-```ruby
+```
 
 # display tags
 git tag
@@ -118,17 +118,17 @@ git push origin :v1.0
 
 ### Useful Commands ###
 
-+ Push all branches to remote repositories
+#### Push all branches to remote repositories
 
-```python
+```
 git push -all
 ```
 
 
 
-+ You can do the following to check what is different between the remote and local:
+#### You can do the following to check what is different between the remote and local:
 
-```python
+```
 # fetch remote branch within local branch
 git fetch 
 
@@ -136,9 +136,9 @@ git fetch
 git diff ..origin/develop
 ```
 
-+ Switching to a remote branch
+#### Switching to a remote branch
 
-```python
+```
 
 
 # fetch remote branch(es)
@@ -164,10 +164,9 @@ git checkout feature/PA-588-cap-prefix-environments-with-platform/haani
 
 ```
 
+#### Comparing 2 branches
 
-+ Comparing 2 branches
-
-```python
+```
 
 # show the changes
 git diff develop..bug_fix
@@ -177,17 +176,17 @@ git diff --name-status develop..bug_fix
 
 ```
 
-+ Comparing a file between 2 branches
+#### Comparing a file between 2 branches
 
-```python
+```
 
 git diff bug_fix master -- app/views/layout.blade.php 
 
 ```
 
-+ Deleting a branch
+#### Deleting a branch
 
-```ruby
+```
 
 # deleting a local branch
 git branch -d bug_fix
@@ -196,6 +195,17 @@ git branch -d bug_fix
 git push origin :bug_fix
 
 ```
+
+#### Rename git branch
+
+```
+git branch -m old_branch new_branch         # Rename branch locally    
+
+git push origin :old_branch                 # Delete the old branch    
+
+git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
+```
+
 
 
 ## Reverting Git Commits ##
@@ -272,15 +282,4 @@ git add --all
 git stash
 git reset --hard 2858eb3
 git stash pop
-```
-
-
-## Rename branch
-
-```
-git branch -m old_branch new_branch         # Rename branch locally    
-
-git push origin :old_branch                 # Delete the old branch    
-
-git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
 ```
