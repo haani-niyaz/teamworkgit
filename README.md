@@ -273,3 +273,14 @@ git stash
 git reset --hard 2858eb3
 git stash pop
 ```
+
+
+## Rename branch
+
+```
+git branch -m old_branch new_branch         # Rename branch locally    
+
+git push origin :old_branch                 # Delete the old branch    
+
+git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
+```
